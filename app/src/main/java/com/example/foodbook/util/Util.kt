@@ -3,6 +3,7 @@ package com.example.foodbook.util
 import android.content.Context
 import android.widget.ImageView
 import androidx.constraintlayout.widget.Placeholder
+import androidx.databinding.BindingAdapter
 import androidx.databinding.adapters.ImageViewBindingAdapter
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
@@ -19,4 +20,8 @@ fun MakeAPlaceHolder(context: Context):CircularProgressDrawable{
         centerRadius=40f
         start()
     }
+}
+@BindingAdapter("android:downloadImage")
+fun downloadImageForBinding(view:ImageView,url:String?){
+    view.DownloadImage(url, MakeAPlaceHolder(view.context))
 }

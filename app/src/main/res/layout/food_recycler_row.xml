@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="food"
+            type="com.example.foodbook.model.Food" />
+        <variable
+            name="listener"
+            type="com.example.foodbook.adapter.FoodClickListener" />
+
+        
+    </data>
 <LinearLayout
 
     android:layout_width="match_parent"
     android:layout_height="150dp"
+    android:onClick="@{listener::clickedFood}"
     android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/food_uuid"
+        android:text="@{String.valueOf(food.uuid)}"
+        ></TextView>
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"
         android:layout_margin="3dp"
+        android:downloadImage="@{food.foodImage}"
         ></ImageView>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -23,6 +42,7 @@
         >
         <TextView
             android:id="@+id/name"
+            android:text="@{food.foodName}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -32,6 +52,7 @@
         </TextView>
         <TextView
             android:id="@+id/calorie"
+            android:text="@{food.foodCalorie}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"

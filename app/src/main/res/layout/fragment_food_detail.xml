@@ -3,6 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="selectedFood"
+            type="com.example.foodbook.model.Food" />
+    </data>
 <RelativeLayout
 
     android:layout_width="match_parent"
@@ -14,6 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:minHeight="200dp"
+        android:downloadImage="@{selectedFood.foodImage}"
         android:scaleType="fitCenter"
         android:layout_margin="10dp">
 
@@ -22,6 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/foodName"
+        android:text="@{selectedFood.foodName}"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
@@ -32,6 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/foodCalorie"
+        android:text="@{selectedFood.foodCalorie}"
         android:textSize="18sp"
         android:layout_below="@+id/foodName"
         android:layout_centerHorizontal="true"
@@ -41,6 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/foodCarbohydrate"
+        android:text="@{selectedFood.foodCarbonhydrate}"
         android:textSize="18sp"
         android:layout_below="@+id/foodCalorie"
         android:layout_centerHorizontal="true"
@@ -50,6 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/foodProtein"
+        android:text="@{selectedFood.foodProtein}"
         android:textSize="18sp"
         android:layout_below="@+id/foodCarbohydrate"
         android:layout_centerHorizontal="true"
@@ -59,6 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/foodFat"
+        android:text="@{selectedFood.foodFat}"
         android:textSize="18sp"
         android:layout_below="@+id/foodProtein"
         android:layout_centerHorizontal="true"
